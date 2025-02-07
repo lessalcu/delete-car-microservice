@@ -1,18 +1,16 @@
 const express = require('express');
 const dotenv = require('dotenv');
-const vehicleRoutes = require('./routes/vehicleRoutes');  // Rutas para manejar vehículos
+const vehicleRoutes = require('./routes/vehicleRoutes');  
 
-dotenv.config();  // Cargar variables de entorno
+dotenv.config();  
 
 const app = express();
-const PORT = process.env.PORT || 3002;  // Puerto específico para este microservicio
+const PORT = process.env.PORT || 3002;  
 
-app.use(express.json());  // Middleware para parsear JSON
+app.use(express.json());  
 
-// Rutas
-app.use('/api/vehicle', vehicleRoutes);  // Usar las rutas definidas para manejar la eliminación
+app.use('/api/vehicle', vehicleRoutes); 
 
-// Iniciar servidor
 app.listen(PORT, () => {
     console.log(`Delete Vehicle microservice running on port ${PORT}`);
 });
